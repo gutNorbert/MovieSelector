@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layouts/base">
+<body>
+    <div layout:fragment="loginContent">
+            <div class="row" th:each="movie : ${selectedMovie}">
+                <div class="col-lg-6">
+                    <img class="small-margin" th:if="${movie.poster == 'N/A'}" src="https://placehold.it/300x200"
+                        alt="moviePoster">
+                    <img class="small-margin" th:unless="${movie.poster == 'N/A'}" th:src="${movie.poster}" alt="moviePoster">
+                </div>
+                <div class="col-lg-6">
+                    <h1 th:text="${movie.title}">Title</h1>
+                    <p th:text="${movie.imdbRating}"></p>
+                    <p th:text="${movie.runtime}"></p>
+                    <p th:text="${movie.released}"></p>
+                    <p th:text="${movie.director}"></p>
+                    <p th:text="${movie.actors}"></p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

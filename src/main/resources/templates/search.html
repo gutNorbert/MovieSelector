@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layouts/base">
+
+<head>
+    <title>MovieSelector</title>
+</head>
+
+<body>
+    <div layout:fragment="loginContent">
+        <form name="login" th:action="@{/search}" method="post" th:object="${movie}">
+            <h2>Please enter a movie title</h2>
+            <label for="movieName" class="sr-only">Movie Title</label>
+            <input type="text" class="form-control" placeholder="Movie Title" required="true" th:field="*{title}" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

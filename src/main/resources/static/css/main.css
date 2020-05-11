@@ -1,0 +1,24 @@
+body {
+  font-family: "Montserrat";
+}
+
+.main {
+  padding-top: 2%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat-Black";
+  font-weight: bold;
+}
+
+/* Search */
+
+.small-margin {
+  margin-bottom: 5%;
+}
+
