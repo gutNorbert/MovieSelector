@@ -6,8 +6,9 @@
 </head>
 
 <body>
-    <div layout:fragment="loginContent">
-        <form name="login" th:action="@{/search}" method="post" th:object="${movie}">
+    <div layout:fragment="content">
+        <a class="btn btn-primary" th:href="@{/myMovies}">My movies</a>
+        <form th:action="@{/search}" method="post" th:object="${movie}">
             <h2>Please enter a movie title</h2>
             <label for="movieName" class="sr-only">Movie Title</label>
             <input type="text" class="form-control" placeholder="Movie Title" required="true" th:field="*{title}" />

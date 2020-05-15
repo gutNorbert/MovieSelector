@@ -1,30 +1,41 @@
 package com.gutnorbert.movieselector.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SelectedMovie {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	
 	@JsonProperty("Title")
 	String title;
-	
+
 	String imdbRating;
-	
+
 	@JsonProperty("Runtime")
 	String runtime;
-	
+
 	@JsonProperty("Released")
 	String released;
-	
+
 	@JsonProperty("Director")
 	String director;
-	
+
 	@JsonProperty("Actors")
 	String actors;
-	
+
 	@JsonProperty("Poster")
 	String poster;
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -80,6 +91,5 @@ public class SelectedMovie {
 	public void setPoster(String poster) {
 		this.poster = poster;
 	}
-	
-	
+
 }

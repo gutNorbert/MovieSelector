@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorator="layouts/base">
-<div layout:fragment="loginContent">
+<div layout:fragment="content">
     <div class="row" th:each="movie : ${searchedMovie}">
         <div class="col-lg-6 small-margin">
             <h1 th:text="${movie.title}">Title</h1>

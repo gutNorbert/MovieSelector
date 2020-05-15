@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorator="layouts/base">
+
 <body>
-    <div layout:fragment="loginContent">
-            <div class="row" th:each="movie : ${selectedMovie}">
-                <div class="col-lg-6">
-                    <img class="small-margin" th:if="${movie.poster == 'N/A'}" src="https://placehold.it/300x200"
-                        alt="moviePoster">
-                    <img class="small-margin" th:unless="${movie.poster == 'N/A'}" th:src="${movie.poster}" alt="moviePoster">
-                </div>
-                <div class="col-lg-6">
-                    <h1 th:text="${movie.title}">Title</h1>
-                    <p th:text="${movie.imdbRating}"></p>
-                    <p th:text="${movie.runtime}"></p>
-                    <p th:text="${movie.released}"></p>
-                    <p th:text="${movie.director}"></p>
-                    <p th:text="${movie.actors}"></p>
-                </div>
+    <div layout:fragment="content">
+        <div class="row" th:each="movie : ${selectedMovie}">
+            <div class="col-lg-6">
+                <img class="small-margin" th:if="${movie.poster == 'N/A'}" src="https://placehold.it/300x200"
+                    alt="moviePoster">
+                <img class="small-margin" th:unless="${movie.poster == 'N/A'}" th:src="${movie.poster}"
+                    alt="moviePoster">
+            </div>
+            <div class="col-lg-6">
+                <h1 th:text="${movie.title}">Title</h1>
+                <p th:text="${movie.imdbRating}"></p>
+                <p th:text="${movie.runtime}"></p>
+                <p th:text="${movie.released}"></p>
+                <p th:text="${movie.director}"></p>
+                <p th:text="${movie.actors}"></p>
+                <form name="login" th:action="@{/saveMovie}" method="post" th:object="${passedMovie}">
+                    <input type="hidden" th:value="${movie.title}" th:name="title" th:id="title" />
+                    <input type="hidden" th:value="${movie.actors}" th:name="actors" th:id="actors" />
+                    <input type="hidden" th:value="${movie.director}" th:name="director" th:id="director" />
+                    <input type="hidden" th:value="${movie.imdbRating}" th:name="imdbRating" th:id="imdbRating" />
+                    <input type="hidden" th:value="${movie.runtime}" th:name="runtime" th:id="runtime" />
+                    <input type="hidden" th:value="${movie.released}" th:name="released" th:id="released" />
+                    <input type="hidden" th:value="${movie.poster}" th:name="poster" th:id="poster" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Save to favorites</button>
+                </form>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
