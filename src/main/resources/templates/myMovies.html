@@ -3,7 +3,6 @@
 
 <body>
     <div layout:fragment="content">
-        <a class="btn btn-primary" th:href="@{/search}">Back to search</a>
         <div class="row" th:each="movie : ${movies}">
             <div class="col-lg-6">
                 <img class="small-margin" th:if="${movie.poster == 'N/A'}" src="https://placehold.it/300x200"

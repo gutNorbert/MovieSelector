@@ -1,5 +1,7 @@
 body {
   font-family: "Montserrat";
+  background: #2d545e;
+  color: #fff;
 }
 
 .main {
@@ -22,3 +24,27 @@ h6 {
   margin-bottom: 5%;
 }
 
+.xs-margin {
+  margin-bottom: 1%;
+}
+
+h1 {
+  color: #fff;
+  padding: 10px 0;
+}
+
+.card {
+  text-align: center;
+  background-color: #e1b382;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+}
+
+.topbar {
+  background-color: #12343b;
+}
+
+.card__text {
+  color: #fff;
+}
