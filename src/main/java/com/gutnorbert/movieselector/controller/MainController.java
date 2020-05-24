@@ -77,7 +77,7 @@ public class MainController {
 
 		return "savedMovie";
 	}
-	
+	 
 	@RequestMapping(path = "/myMovies")
 	public String myMovies(Model model) {
 
@@ -89,6 +89,20 @@ public class MainController {
 		}
 
 		return "myMovies";
+	}
+	
+	@RequestMapping(path = "/deleteMovie", method = RequestMethod.POST)
+	public String deleteMovie(@ModelAttribute SelectedMovie passedMovie) {
+
+		try {
+			logger.debug("id-ja:" + passedMovie.getId());
+			movieSaver.deleteMovie(passedMovie);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return "deleteMovie";
 	}
 
 }

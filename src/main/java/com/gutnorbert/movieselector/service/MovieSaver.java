@@ -21,5 +21,9 @@ public class MovieSaver {
 	public List<SelectedMovie> getMovies() throws Exception {
 		return (List<SelectedMovie>) selectedMovieRepository.findAll();
 	}
+	
+	public void deleteMovie (SelectedMovie movie) throws Exception {
+		selectedMovieRepository.deleteById(movie.getId());
+	}
 
 }

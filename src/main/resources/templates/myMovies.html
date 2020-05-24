@@ -17,6 +17,10 @@
                 <p th:text="${movie.released}"></p>
                 <p th:text="${movie.director}"></p>
                 <p th:text="${movie.actors}"></p>
+                <form name="login" th:action="@{/deleteMovie}" method="post" th:object="${passedMovie}">
+                    <input type="hidden" th:value="${movie.id}" th:name="id" th:id="id" />
+                    <button class="btn btn-lg btn-danger btn-block" type="submit">Delete movie</button>
+                </form>
             </div>
         </div>
     </div>
