@@ -12,11 +12,20 @@
             </div>
             <div class="col-lg-6">
                 <h1 th:text="${movie.title}">Title</h1>
-                <p th:text="${movie.imdbRating}"></p>
-                <p th:text="${movie.runtime}"></p>
-                <p th:text="${movie.released}"></p>
-                <p th:text="${movie.director}"></p>
-                <p th:text="${movie.actors}"></p>
+                <div class="row"><div class="col-lg-3 col-3">
+                    <p>Imdb rating: </p>
+                    <p>Runtime: </p>
+                    <p>Released: </p>
+                    <p>Director: </p>
+                    <p>Actors: </p>
+                </div>
+                <div class="col-lg-9 col-9 float-right">
+                    <p th:text="${movie.imdbRating}"></p>
+                    <p th:text="${movie.runtime}"></p>
+                    <p th:text="${movie.released}"></p>
+                    <p th:text="${movie.director}"></p>
+                    <p th:text="${movie.actors}"></p>
+                </div></div>
                 <form name="login" th:action="@{/deleteMovie}" method="post" th:object="${passedMovie}">
                     <input type="hidden" th:value="${movie.id}" th:name="id" th:id="id" />
                     <button class="btn btn-lg btn-danger btn-block" type="submit">Delete movie</button>

@@ -95,10 +95,8 @@ public class MainController {
 	public String deleteMovie(@ModelAttribute SelectedMovie passedMovie) {
 
 		try {
-			logger.debug("id-ja:" + passedMovie.getId());
 			movieSaver.deleteMovie(passedMovie);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

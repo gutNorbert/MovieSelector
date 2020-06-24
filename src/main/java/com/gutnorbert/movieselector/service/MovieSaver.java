@@ -16,7 +16,7 @@ public class MovieSaver {
 
 	public void saveMovie (SelectedMovie movie) throws Exception {
 		selectedMovieRepository.save(movie);
-	}
+	} 
 	
 	public List<SelectedMovie> getMovies() throws Exception {
 		return (List<SelectedMovie>) selectedMovieRepository.findAll();
